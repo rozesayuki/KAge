@@ -59,9 +59,14 @@ class HalfModalViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
             break
         }
        // monthResultLabel.text = monthPicker[row]
+       
     }
     
-   
+    @objc func done(){
+        yearResultLabel.endEditing(true)
+        monthResultLabel.endEditing(true)
+        dayResultLabel.endEditing(true)
+    }
     
    
     let monthPicker = ["1","2","3","4","5","6","7","8","9","10","11","12"]
@@ -104,10 +109,6 @@ class HalfModalViewController: UIViewController,UIPickerViewDelegate, UIPickerVi
     
     
     
-    
-    func calage(){
-       // age = birthday - today
-    }
     
     
     override func viewDidLoad() {

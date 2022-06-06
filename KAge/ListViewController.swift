@@ -23,6 +23,25 @@ class ListViewController: UITableViewController {
     @IBAction func modalbutton(){
         halfModal()
     }
+
+    let name = ["なよん","さな"]
+    let age = ["28","27"]
+    
+    /// セルに値を設定するデータソースメソッド（必須）
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       // セルを取得
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+       
+       // セルに値を設定
+       //cell.myImageView.image = UIImage(named: imageNames[indexPath.row])
+       //cell.nameLabel.text = name[indexPath.row]
+       // cell.ageLable.text = age[indexPath.row]
+        cell.setCell(name: name[indexPath.row], age: age[indexPath.row])
+       
+       return cell
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,7 +62,7 @@ class ListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return name.count
     }
 
     /*
